@@ -14,25 +14,23 @@ class rich extends StatefulWidget {
 }
 
 class _richState extends State<rich> {
+
+
+  List<String> quotes=["saddsa","dsad","dsadadasda"];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-      title: Text('$amount'),
-        centerTitle: true,
-      ),
-      body: Center(
-        child:
-        FloatingActionButton(
-          child:Icon(Icons.abc_outlined),
-              onPressed: () {
-                setState(() {
-                  amount-=1001;
+        appBar: AppBar(
+          title: Text('Yoo'),
+          centerTitle: true,
+        ),
+        body:Column(
+          children:quotes.map((quote){
+            return Text('$quote');
+          }).toList(),
+        ),
 
-                });
-              },
-    ),
-      ),
     );
   }
 }
