@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'quote.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -16,7 +17,29 @@ class rich extends StatefulWidget {
 class _richState extends State<rich> {
 
 
-  List<String> quotes=["saddsa","dsad","dsadadasda"];
+  List<Quote> quotes=[Quote(text:"saddsa",author:"Kunal"),
+                       Quote(text:"dsad",author:"Kunal"),
+                       Quote(text:"dsasdasdadsadsassadsdadsadadasda",author:"Kunal")];
+
+  Widget quoteTemplate(quote)
+  {
+    return Card(
+      margin: EdgeInsets.all(16),
+      child: Column(
+        children: <Widget>[
+          Text(quote.text,
+          style: TextStyle(
+            fontSize: 15,
+          ),
+          ),
+          Text(quote.author),
+        ],
+      ),
+    );
+
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -25,11 +48,9 @@ class _richState extends State<rich> {
           title: Text('Yoo'),
           centerTitle: true,
         ),
-        body:Column(
-          children:quotes.map((quote){
-            return Text('$quote');
-          }).toList(),
-        ),
+        body:Column(crossAxisAlignment: CrossAxisAlignment.stretch,
+            children:quotes.map((quote) =>quoteTemplate(quote)).toList(),//Text('${quote.text} - ${quote.author}')).toList(),
+          ),
 
     );
   }
