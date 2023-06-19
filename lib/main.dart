@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:richh/pages/home.dart';
 
 void main() {
-  runApp(const MaterialApp(
-    initialRoute: '/',
-    routes: {
-      '/':(context) => ,
-      '':(context) =>,
-    },
+  runApp(MaterialApp(
+      initialRoute: '/',
+      routes: {
+        '/': (context) => Home(),
+        // '': (context) => Playg(),
+      }
   ));
 }
