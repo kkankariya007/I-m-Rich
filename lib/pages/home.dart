@@ -10,7 +10,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
 
   List<PeopleList> ppl=[
-    PeopleList(img:'billgates.jpg', name:'Bill Gates', money:50000),
+    PeopleList(img:'billates.jpg', name:'Bill Gates', money:50000),
     PeopleList(img:'elon', name:'Elon Musk', money:503403),
     PeopleList(img:'mukesh.png',  name:'Mukesh Ambani', money:5343),
     PeopleList(img: 'kunal.png', name:'K', money:3214),
@@ -43,7 +43,11 @@ class _HomeState extends State<Home> {
                   children: <Widget>[
                     InkWell(
                     onTap:() {
-                      // Navigator.pushReplacementNamed(context, routeName)
+                      Navigator.pushNamed(context, '/spend',arguments: {
+                        'img':ppl[index].img,
+                        'name':ppl[index].name,
+                        'value':ppl[index].money,
+                      });
               print("hello");
               },
                 child: Image.asset('images/${ppl[index].img}',
