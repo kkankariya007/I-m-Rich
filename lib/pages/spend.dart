@@ -19,11 +19,18 @@ class _SpendState extends State<Spend> {
     print(data['value']);
     return Scaffold(
       appBar: AppBar(
-        title: Text("hey"),
-        backgroundColor: Colors.purpleAccent,
+        automaticallyImplyLeading: false,
+        toolbarHeight: 105,
+        centerTitle: true,
+        title: Text('\$${data['value']}',
+        style: TextStyle(
+          fontSize: 45,
+        ),),
+        backgroundColor: Colors.black.withOpacity(0.9),
       ),
       body: Center(
-        child: Text("Hey"),
+        child:CircularProgressIndicator(
+          strokeWidth: 2),
       ),
     );
   }
