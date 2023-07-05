@@ -4,6 +4,6 @@ class Things{
   String name;
   String img;
   int price;
-
-  Things({required this.name,required this.img,required this.price});
+  int quan;
+  Things({required this.name,required this.img,required this.price,required this.quan});
 }
